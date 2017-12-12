@@ -145,11 +145,24 @@ echo "It is a test"
 echo "\"It is a test\""
 echo `date` #显示当前日期.
 
-#函数?
+#函数
+#当n>=10时，需要使用${n}来获取参数。
+function funWithParam(){
+    echo "第一个参数为 $1 !"
+    echo "第二个参数为 $2 !"
+    echo "第十个参数为 ${10} !"
+    echo "第十一个参数为 ${11} !"
+    echo "参数总数有 $# 个!"
+    echo "作为一个字符串输出所有参数 $* !"
+}
+funWithParam 1 2 3 4 5 6 7 8 9 34 73
 
-#if-else?
+#输入/输出重定向
+# cmd >  file.txt  #output to file.txt, replace
+# cmd >> file.txt  #output to file.txt, append
 
-#其他?
+#文件包含=source
+#理解为C里面的include
 
 #运行文件
 #chmod +x shell1.sh
