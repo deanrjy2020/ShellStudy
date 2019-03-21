@@ -44,6 +44,15 @@ echo ""
 string="alibaba is a great company"
 echo "the sub of the string is: "${string:1:4} #输出：liba
 echo ""
+# compare two strings
+# 1, use one '='', 2, 'x' is an arbitrary string in case that your_name is NULL.
+if [ "${your_name}"x = "Dean"x ]
+    then
+        echo "Yes"
+    else
+        echo "No"
+    fi
+
 
 # list all the files in the folder.
 for file in `ls .`
@@ -148,6 +157,8 @@ echo `date` #显示当前日期.
 #函数
 #当n>=10时，需要使用${n}来获取参数。
 function funWithParam(){
+    # skip the first 2 argus and then $@ can get all the rest.
+    #shift 2
     echo "第一个参数为 $1 !"
     echo "第二个参数为 $2 !"
     echo "第十个参数为 ${10} !"
