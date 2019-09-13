@@ -172,6 +172,9 @@ funWithParam 1 2 3 4 5 6 7 8 9 34 73
 # cmd >  file.txt  #output to file.txt, replace
 # cmd >> file.txt  #output to file.txt, append
 
+# stdout and stderr
+# https://note.qidong.name/2017/07/bash_stdout_stderr/
+
 #文件包含=source
 #理解为C里面的include
 
