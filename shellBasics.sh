@@ -53,6 +53,18 @@ if [ "${your_name}"x = "Dean"x ]
         echo "No"
     fi
 
+# match the first char of string.
+if [ "${line:0:1}" = "#" ]; then
+    continue;
+fi
+
+# grep the keyword from the txt file
+if grep -F "keyword1" "${file}" || grep -F "keyword2" "${file}"; then
+    testpassed=1
+    return 1
+else
+    return 0
+fi
 
 # list all the files in the folder.
 for file in `ls .`
@@ -172,7 +184,8 @@ funWithParam 1 2 3 4 5 6 7 8 9 34 73
 # cmd >  file.txt  #output to file.txt, replace
 # cmd >> file.txt  #output to file.txt, append
 
-# stdout and stderr
+# Save the stdout and stderr to file.
+${printedbyEchoOrProgram} 2>&1 | tee $logFile
 # https://note.qidong.name/2017/07/bash_stdout_stderr/
 
 #文件包含=source
