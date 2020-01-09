@@ -46,12 +46,11 @@ echo "the sub of the string is: "${string:1:4} #输出：liba
 echo ""
 # compare two strings
 # 1, use one '='', 2, 'x' is an arbitrary string in case that your_name is NULL.
-if [ "${your_name}"x = "Dean"x ]
-    then
-        echo "Yes"
-    else
-        echo "No"
-    fi
+if [ "${your_name}"x = "Dean"x ]; then
+    echo "Yes"
+else
+    echo "No"
+fi
 
 # match the first char of string.
 if [ "${line:0:1}" = "#" ]; then
@@ -60,16 +59,19 @@ fi
 
 # grep the keyword from the txt file
 if grep -F "keyword1" "${file}" || grep -F "keyword2" "${file}"; then
-    testpassed=1
-    return 1
-else
+    testpassed=0
     return 0
+else
+    return 1
 fi
+
+# use ; if it is in one line
+if CONDITION; then echo "CONDITION returns 0"; else echo "CONDITION returns 1"; fi
 
 # list all the files in the folder.
 for file in `ls .`
 do
-	echo $file
+    echo $file
 done
 
 # 运行时传递参数
@@ -200,3 +202,4 @@ ${printedbyEchoOrProgram} 2>&1 | tee $logFile
 
 
 
+# more comments in my OneNote Shell.
