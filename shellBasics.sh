@@ -74,6 +74,18 @@ do
     echo $file
 done
 
+case $SERVER_ID in
+    "J3")
+        echo_g "J3"
+        ;;
+    "VM0")
+        echo_g "VM0"
+        ;;
+    *)
+        echo_r "ERROR: invalid SERVER_ID: $SERVER_ID"
+        return 1
+esac
+
 # 运行时传递参数
 # $0为执行的文件名
 # $1为第一个参数
